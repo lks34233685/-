@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../static/iconfont/iconfont.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
+    <script src="../js/localization/messages_zh.min.js"></script>
+    <script src="../js/gverify.js"></script>
+</head>
+
+<body>
+    <!--头部-->
+    <div class="xf_header">
+        <div class="header-con">
+            <a href="../index.html">
+                <img src="../static/img/logo_top.png" />
+            </a>
+            <div class="city">
+                <span><i class="iconfont icon-ziyuan83"></i></span>
+                <span>广州市</span>
+                <a href="#" type="button">切换城市</a>
+            </div>
+            <div class="nav">
+                <a href="../html/list.html">全部</a>
+                <a href="../html/list.html" class="n cake">蛋糕</a>
+                <a href="../html/list.html" class="n afternoontea">下午茶</a>
+                <a href="../html/list.html" class="n freehand">手信</a>
+                <a href="../html/list.html" class="groupbuys">团购预约</a>
+                <a href="../html/list.html">关于我们</a>
+                <a href="../html/list.html">开店咨询</a>
+            </div>
+
+            <div class="link">
+                <a class="search" href="javascript:void(0)">
+                    <i class="iconfont icon-ziyuan76"></i>
+                </a>
+                <a href="../html/car.html" class="car">
+                    <i class="iconfont icon-01"></i>
+                </a>
+                <a href="../html/login.html" id="login">
+                    <i class="iconfont icon-daohanglan-05"></i>
+                </a>
+
+            </div>
+
+        </div>
+        <!-- 隐藏菜单 -->
+        <div id="headerSecNav" class="sec-nav" style="display: none;">
+            <ol class="cake" data-classname="cake" style="display: none;">
+                <li data-id="1" data-track="首页-二级导航-全部蛋糕">
+                    <a href="../html/list.html">
+                        <div class="icon-wrap"><img src="../static/img/cake-all.jpg" class="icon"></div>
+                        <div class="name">全部蛋糕</div>
+                    </a>
+                </li>
+                <li data-id="4" data-track="首页-二级导航-鲜果蛋糕">
+                    <a href="../html/list.html">
+                        <div class="icon-wrap"><img src="../static/img/cake-fruit.png" class="icon"></div>
+                        <div class="name">鲜果蛋糕</div>
+                    </a>
+                </li>
+                <li data-id="5" data-track="首页-二级导航-芝士慕斯蛋糕">
+                    <a href="../html/list.html">
+                        <div class="icon-wrap"><img src="../static/img/cake-cheese.png" class="icon"></div>
+                        <div class="name">芝士慕斯蛋糕</div>
+                    </a>
+                </li>
+                <li data-id="6" data-track="首页-二级导航-混合型蛋糕">
+                    <a href="../html/list.html">
+                        <div class="icon-wrap"><img src="../static/img/cake-mix.png" class="icon"></div>
+                        <div class="name">混合型蛋糕</div>
+                    </a>
+                </li>
+                <li data-id="8" data-track="首页-二级导航-多层蛋糕">
+                    <a href="../html/list.html">
+                        <div class="icon-wrap"><img src="../static/img/cake-lasagna.png" class="icon"></div>
+                        <div class="name">多层蛋糕</div>
+                    </a>
+                </li>
+                <li data-id="9" data-track="首页-二级导航-栗子巧克力蛋糕">
+                    <a href="../html/list.html">
+                        <div class="icon-wrap"><img src="../static/img/cake-chestnuts.png" class="icon"></div>
+                        <div class="name">栗子巧克力蛋糕</div>
+                    </a>
+                </li>
+                <li data-id="10" data-track="首页-二级导航-节日蛋糕">
+                    <a href="../html/list.html">
+                        <div class="icon-wrap"><img src="../static/img/cake-festival.png" class="icon"></div>
+                        <div class="name">节日蛋糕</div>
+                    </a>
+                </li>
+            </ol>
+            <ol class="afternoontea" data-classname="afternoontea" style="display: none;">
+                <li data-id="11" data-track="首页-二级导航-下午茶系列">
+                    <a href="../html/list.html">
+                        <div class="icon-wrap"><img src="../static/img/afternoon-tea.png" class="icon"></div>
+                        <div class="name">下午茶系列</div>
+                    </a>
+                </li>
+            </ol>
+            <ol class="freehand" data-classname="freehand" style="display: none;">
+                <li data-id="12" data-track="首页-二级导航-全国包邮">
+                    <a href="../html/list.html">
+                        <div class="icon-wrap"><img src="../static/img/xfl.png" class="icon"></div>
+                        <div class="name">全国包邮</div>
+                    </a>
+                </li>
+            </ol>
+        </div>
+        <!-- search框 -->
+        <div class="search-bar" style="display: none;">
+            <input class="search-input" type="text" name="">
+            <!-- <a id="start-search" href="javascript:;" data-track="首页-搜索"></a> -->
+            <i class="iconfont icon-ziyuan76"></i>
+        </div>
+    </div>
+    <div id="main">
+        <!-- 登录 -->
+        <div class="container useLogin " style="display: block;;">
+            <form class="form-horizontal useLoginbox">
+                <div class="form-title">帐号登录</div>
+                <div class="form-group">
+                    <label for="username" class="col-sm-2 control-label">手机号码：</label>
+                    <div class="col-sm-10">
+                        <input type="username" class="form-control" id="username" placeholder="请输入用户名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-2 control-label">密码：</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="password" placeholder="请输入密码">
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <label for="check" class="col-sm-2 control-label">
+                <input type="checkbox" class="form-control" id="check">
+                记住我
+            </label>
+                    <a class="offcanvas-anchor anchor" data-target="forgot-password" href="javascript:;" data-track="登录页-忘记密码">忘记密码</a>
+                </div>
+                <div class="form-group containerbot">
+
+                    <button type="submit" class="btn btn-default">登录</button>
+
+                </div>
+                <div class="form-group containerbot">
+                    <a class="offcanvas-anchor anchor phone" data-target="login-with-phone" href="javascript:;" data-track="登录页-手机号快速登录切换">手机号快速登录</a>
+                </div>
+                <p class="br-p"></p>
+                <div class="form-group containerbot">
+                    <a class="offcanvas-anchor anchor zc" data-target="register" href="javascript:;" data-track="登录页-注册新账号">注册新账号</a>
+                </div>
+            </form>
+        </div>
+        <!-- 手机快捷登录 -->
+        <div class="container usePhone" style="display: none;">
+            <form class="form-horizontal usePhonebox">
+                <div class="form-title">手机快捷登录</div>
+                <div class="form-group">
+                    <label for="username" class="col-sm-2 control-label">手机号码：</label>
+                    <div class="col-sm-10">
+                        <input type="username" class="form-control" id="username" placeholder="请输入用户名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-2 control-label">密码：</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="password" placeholder="请输入密码">
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <label for="check" class="col-sm-2 control-label">
+                <input type="checkbox" class="form-control" id="check">
+                记住我
+            </label>
+                    <a class="offcanvas-anchor anchor" data-target="forgot-password" href="javascript:;" data-track="登录页-忘记密码">忘记密码</a>
+                </div>
+                <div class="form-group containerbot">
+                    <button type="submit" class="btn btn-default">登录</button>
+                </div>
+                <div class="form-group containerbot">
+                    <a data-target="login" class="offcanvas-anchor link login" href="javascript:;" data-track="登录页-账号登录切换">帐号登录</a>
+                </div>
+                <p class="br-p"></p>
+                <div class="form-group containerbot">
+                    <a class="offcanvas-anchor anchor zc" data-target="register" href="javascript:;" data-track="登录页-注册新账号">注册新账号</a>
+                </div>
+            </form>
+        </div>
+        <!-- 注册 -->
+        <div id="zcBox" class="container useZC" style="display: none;">
+            <form action="" id="newZc" class="form-horizontal">
+                <div class="form-title">注册新账号</div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="username" tabindex="1" id="zcTel" name="zcTel" placeholder="请输入您的手机号" maxlength="11">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" placeholder="请设置8-20位密码" tabindex="2" id="zcpassword" name="zcpassword" maxlength="20">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" placeholder="请再次输入您的密码" tabindex="3" id="isyes" name="isyes" maxlength="20">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="yzmbox">
+                        <input type="text" class="form-control" placeholder="请输入验证码" tabindex="4" id="yzm" name="yzm">
+                    </div>
+                    <p id="img-captcha"></p>
+                </div>
+                <div class="form-group">
+                    <div class="yzmbox">
+                        <input type="text" class="form-control" placeholder="请输入您收到的短信验证码" tabindex="5" id="dxyzm" name="dxyzm">
+                    </div>
+                    <button class="white-btn send-captcha dxyzm" disabled>456789</button>
+                </div>
+                <div class="form-group">
+
+                    <label for="check" class="col-sm-2 control-label">
+                <input type="checkbox" class="form-control" id="check" name="check">
+                我已阅读并同意
+            </label>
+                    <a class="anchor licence" href="/agreement" target="_blank">用户协议</a>
+                </div>
+                <div class="form-group containerbot">
+                    <button class="btn btn-register">同意协议并注册</button>
+                </div>
+                <div class="form-group containerbot">
+                    <a data-target="login" class="offcanvas-anchor link login" href="javascript:;" data-track="登录页-账号登录切换">帐号登录</a>
+                </div>
+                <p class="br-p"></p>
+                <div class="form-group containerbot">
+                    <a class="offcanvas-anchor anchor phone" data-target="login-with-phone" href="javascript:;" data-track="登录页-手机号快速登录切换">手机号快速登录</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--footer-->
+    <div class="xf_footer">
+        <footer>
+            <div class="footer1">
+                <div class="msg">
+                    <a href="#">品牌动态</a>
+                    <a href="#">生产经营资质</a>
+                    <a href="#">企业合作</a>
+                    <a href="#">发票申请</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">帮助服务</a>
+                    <a href="#">联系我们</a>
+                </div>
+                <div class="tel">
+                    <div class="contact-tel">
+                        <img src="../static/img/tel_03.jpg" />
+                        <span>400-999-6665</span>
+                    </div>
+                    <div class="contact-tel">
+                        <a href="http://weibo.com/blisscakesz" rel="nofollow noopener noreferrer">WEIBO</a>
+                    </div>
+
+                    <div class="wx contact-tel">
+                        <p>WECHAT</p>
+                        <div class="qrcode-wrap">
+                            <div class="qrcode-inner">
+                                <img src="../static/img/wx_qrcode.jpg" alt="">
+                                <p>扫描幸福商城<br>了解更多资讯</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="msg"><a href="#">京东商城</a></div>
+            </div>
+            <div class="footer2">
+                <div class="copyright">
+                    <p>
+                        <span>深圳市幸福商城科技股份有限公司</span>
+                        <span>粤ICP备16039394号-6 </span>
+                        <span>京公网安备44030702002399</span>
+                    </p>
+                    <p>公司地址：深圳市盐田区沙头角街道田心社区沙盐路3018号盐田现代产业服务中心(一期)A座13D-3
+                    </p>
+                </div>
+                <div class="rd">
+                    <a href="https://xyt.xinchacha.com/pcinfo?sn=461070375988629504&certType=6" rel="nofollow noopener noreferrer" target="_blank">
+                        <img src="../static/img/footer-logo01.png" alt="">
+                    </a>
+                    <a href="https://si.trustutn.org/info?sn=199200907040089273180&certType=1" rel="nofollow noopener noreferrer" target="_blank">
+                        <img src="../static/img/footer-logo02.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/ajax.js"></script>
+    <script src="../js/cookie.js"></script>
+    <script src="../js/login.js"></script>
+    <!-- <script src="../js/newzc.js"></script> -->
+    <script src="../js/zhuce.js"></script>
+</body>
+
+</html>

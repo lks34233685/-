@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>项目—幸福西饼详情页</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/public.css">
+    <link rel="stylesheet" type="text/css" href="../css/details.css">
+    <link rel="stylesheet" href="../static/iconfont/iconfont.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ajax.js"></script>
+    <!-- <script src="../js/cookie.js"></script> -->
+    <script src="../js/jquery.validate.min.js"></script>
+    <script src="../js/localization/messages_zh.min.js"></script>
+
+</head>
+
+<body>
+    <div id="details">
+        <!--头部-->
+        <div class="xf_header">
+            <div class="header-con">
+                <a href="../index.html">
+                    <img src="../static/img/logo_top.png" />
+                </a>
+                <div class="city">
+                    <span><i class="iconfont icon-ziyuan83"></i></span>
+                    <span>广州市</span>
+                    <a href="#" type="button">切换城市</a>
+                </div>
+                <div class="nav">
+                    <a href="../html/list.html">全部</a>
+                    <a href="../html/list.html" class="n cake">蛋糕</a>
+                    <a href="../html/list.html" class="n afternoontea">下午茶</a>
+                    <a href="../html/list.html" class="n freehand">手信</a>
+                    <a href="../html/list.html" class="groupbuys">团购预约</a>
+                    <a href="../html/list.html">关于我们</a>
+                    <a href="../html/list.html">开店咨询</a>
+                </div>
+
+                <div class="link">
+                    <a class="search" href="javascript:void(0)">
+                        <i class="iconfont icon-ziyuan76"></i>
+                    </a>
+                    <a href="../html/car.html" class="car">
+                        <i class="iconfont icon-01"></i>
+                    </a>
+                    <a href="../html/login.html" id="login">
+                        <i class="iconfont icon-daohanglan-05"></i>
+                    </a>
+
+                </div>
+
+            </div>
+            <!-- 隐藏菜单 -->
+            <div id="headerSecNav" class="sec-nav" style="display: none;">
+                <ol class="cake" data-classname="cake" style="display: none;">
+                    <li data-id="1" data-track="首页-二级导航-全部蛋糕">
+                        <a href="../html/list.html">
+                            <div class="icon-wrap"><img src="../static/img/cake-all.jpg" class="icon"></div>
+                            <div class="name">全部蛋糕</div>
+                        </a>
+                    </li>
+                    <li data-id="4" data-track="首页-二级导航-鲜果蛋糕">
+                        <a href="../html/list.html">
+                            <div class="icon-wrap"><img src="../static/img/cake-fruit.png" class="icon"></div>
+                            <div class="name">鲜果蛋糕</div>
+                        </a>
+                    </li>
+                    <li data-id="5" data-track="首页-二级导航-芝士慕斯蛋糕">
+                        <a href="../html/list.html">
+                            <div class="icon-wrap"><img src="../static/img/cake-cheese.png" class="icon"></div>
+                            <div class="name">芝士慕斯蛋糕</div>
+                        </a>
+                    </li>
+                    <li data-id="6" data-track="首页-二级导航-混合型蛋糕">
+                        <a href="../html/list.html">
+                            <div class="icon-wrap"><img src="../static/img/cake-mix.png" class="icon"></div>
+                            <div class="name">混合型蛋糕</div>
+                        </a>
+                    </li>
+                    <li data-id="8" data-track="首页-二级导航-多层蛋糕">
+                        <a href="../html/list.html">
+                            <div class="icon-wrap"><img src="../static/img/cake-lasagna.png" class="icon"></div>
+                            <div class="name">多层蛋糕</div>
+                        </a>
+                    </li>
+                    <li data-id="9" data-track="首页-二级导航-栗子巧克力蛋糕">
+                        <a href="../html/list.html">
+                            <div class="icon-wrap"><img src="../static/img/cake-chestnuts.png" class="icon"></div>
+                            <div class="name">栗子巧克力蛋糕</div>
+                        </a>
+                    </li>
+                    <li data-id="10" data-track="首页-二级导航-节日蛋糕">
+                        <a href="../html/list.html">
+                            <div class="icon-wrap"><img src="../static/img/cake-festival.png" class="icon"></div>
+                            <div class="name">节日蛋糕</div>
+                        </a>
+                    </li>
+                </ol>
+                <ol class="afternoontea" data-classname="afternoontea" style="display: none;">
+                    <li data-id="11" data-track="首页-二级导航-下午茶系列">
+                        <a href="../html/list.html">
+                            <div class="icon-wrap"><img src="../static/img/afternoon-tea.png" class="icon"></div>
+                            <div class="name">下午茶系列</div>
+                        </a>
+                    </li>
+                </ol>
+                <ol class="freehand" data-classname="freehand" style="display: none;">
+                    <li data-id="12" data-track="首页-二级导航-全国包邮">
+                        <a href="../html/list.html">
+                            <div class="icon-wrap"><img src="../static/img/xfl.png" class="icon"></div>
+                            <div class="name">全国包邮</div>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+            <!-- search框 -->
+            <div class="search-bar" style="display: none;">
+                <input class="search-input" type="text" name="">
+                <!-- <a id="start-search" href="javascript:;" data-track="首页-搜索"></a> -->
+                <i class="iconfont icon-ziyuan76"></i>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="product">
+
+                <!-- <div class="breadbars">
+                    <a href="/category/parentId/1" class="r"><span>${item.cat_two_id}</span></a>
+                    <span>&gt;</span>
+                    <a href="/category/4" class="r"><span>${item.cat_three_id}</span></a>
+                    <span>&gt;</span>
+                    <span class="cur">${item.goods_name}</span>
+                </div>
+                <div class="pro-intro" data-goods="${item.goods_id}">
+                    <div class="imgs">
+                        <div id="proBanner" class="main slick-initialized slick-slider" role="toolbar">
+                            <div aria-live="polite" class="slick-list draggable">
+                                <div class="slick-track" style="opacity: 1; width: 2040px;" role="listbox">
+                                    <img src="${item.goods_small_logo1}" alt="" class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00" style="width: 510px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;">
+                                    <img src="${item.goods_small_logo2}" alt="" class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide01" style="width: 510px; position: relative; left: -510px; top: 0px; z-index: 998; opacity: 0;">
+                                    <img src="${item.goods_small_logo3}" alt="" class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide02" style="width: 510px; position: relative; left: -1020px; top: 0px; z-index: 998; opacity: 0;">
+                                    <img src="${item.goods_small_logo4}" alt="" class="slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide03" style="width: 510px; position: relative; left: -1530px; top: 0px; z-index: 998; opacity: 0;"></div>
+                            </div>
+                            <ul class="slick-dots" style="display: block;" role="tablist">
+                                <li class="slick-active" aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation00" id="slick-slide00"><button type="button" data-role="none" role="button" aria-required="false" tabindex="0">1</button></li>
+                                <li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation01" id="slick-slide01"><button type="button" data-role="none" role="button" aria-required="false" tabindex="0">2</button></li>
+                                <li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation02" id="slick-slide02"><button type="button" data-role="none" role="button" aria-required="false" tabindex="0">3</button></li>
+                                <li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation03" id="slick-slide03"><button type="button" data-role="none" role="button" aria-required="false" tabindex="0">4</button></li>
+                            </ul>
+                        </div>
+                        <div id="proBannerNavs" class="list">
+                            <ol class="clearfix">
+                                <li class="active">
+                                    <img src="${item.goods_small_logo1}" alt="">
+                                </li>
+                                <li>
+                                    <img src="${item.goods_small_logo2}" alt="">
+                                </li>
+                                <li>
+                                    <img src="${item.goods_small_logo3}" alt="">
+                                </li>
+                                <li>
+                                    <img src="${item.goods_small_logo4}" alt="">
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="intro">
+                        <div class="share">
+                            <a href="javascript:;" class="share-icon"></a>
+                            <div class="share-pop transition">
+                                <a class="sina" href="javascript:;" target="_blank"></a>
+                                <a class="qzone" href="javascript:;" target="_blank"></a>
+                            </div>
+                        </div>
+                        <div type="hidden" id="mallCode">1_1014287_0220004366</div>
+                        <h2 class="title">${item.goods_name}</h2>
+    
+                        <div class="pri-wrapper active">
+                            <h1 class="pri">￥<span id="price-span">${item.goods_price1}</span>
+                            </h1>
+                            <h1 class="pri">￥<span id="price-span">${item.goods_price2}</span>
+                            </h1>
+                            <h1 class="pri">￥<span id="price-span">${item.goods_price3}</span>
+                            </h1>
+                            <h1 class="pri">￥<span id="price-span">${item.goods_price4}</span>
+                            </h1>
+                            <h1 class="pri">￥<span id="price-span">${item.goods_price5}</span>
+                            </h1>
+                        </div>
+                        <div class="size label">选择规格</div>
+                        <ol class="size-list clearfix">
+                            <li class="active" data-sku="4366" data-goods-channel-id="${item.goods_id}">${item.goods_specifications}</li>
+                            <li class data-sku="4366" data-goods-channel-id="${item.goods_id}">${item.goods_specifications2}</li>
+                            <li class data-sku="4366" data-goods-channel-id="${item.goods_id}">${item.goods_specifications3}</li>
+                            <li class data-sku="4366" data-goods-channel-id="${item.goods_id}">${item.goods_specifications4}</li>
+                            <li class data-sku="4366" data-goods-channel-id="${item.goods_id}">${item.goods_specifications5}</li>
+                        </ol>
+                        <div class="ch clearfix">
+                            <span class="num label">数量</span>
+                            <div id="num-picker" class="np">
+                                <input id="product-num" type="text" value="1">
+                                <div class="num-action">
+                                    <a class="add-btn" href="javascript:;" data-track="商品详情-添加商品数据-点击" data-opt-label="${item.goods_name}" data-opt-value="${item.goods_id}"></a>
+                                    <a class="minus-btn" href="javascript:;" data-track="商品详情-减少商品数据-点击" data-opt-label="${item.goods_name}" data-opt-value="${item.goods_id}"></a>
+                                </div>
+                            </div>
+    
+                        </div>
+                        <div class="btns">
+                            <button id="buyItNowBtn" data-track="商品详情-立即购买-点击" data-opt-label="${item.goods_name}" data-opt-value="${item.goods_id}">立即购买</button>
+                            <button id="addToCartBtn" data-track="商品详情-加入购物车-点击" data-opt-label="${item.goods_name}" data-opt-value="${item.goods_id}">加入购物车</button>
+                        </div>
+                        <div class="sh">
+                            <span class="text" data-track="商品详情-幸福承诺-点击" data-opt-label="${item.goods_name}	" data-opt-value="${item.goods_id}">
+                                幸福承诺
+                            </span>
+                            <div class="transition">
+                                <ol>
+                                    <li>
+                                        <strong>就敢退</strong>
+                                        <span>实物不对板，退款不退货！</span>
+                                    </li>
+                                    <li>
+                                        <strong>就敢减</strong>
+                                        <span>约定时间！迟到1分钟减1元！</span>
+                                    </li>
+                                    <li>
+                                        <strong>就敢送</strong>
+                                        <span>迟到30分钟免费赠送！</span>
+                                    </li>
+                                    <li>
+                                        <strong>就敢赔</strong>
+                                        <span>早到或迟到60分钟以上，双倍赔付！</span>
+                                    </li>
+                                </ol>
+                            </div>
+    
+    
+    
+                            <a href="/region" target="_blank" class="show-delivery-region-menu" data-track="商品详情-查看配送区域-点击" data-opt-label="${item.goods_name}	" data-opt-value="${item.goods_id}">查看配送区域</a>
+                            <div class="delivery-region-menu-pop transition">
+                                <a class="show-delivery-region" href="javascript:;">弹窗</a>
+                                <a class="" href="/region" target="_blank">新窗口</a>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+                ${item.goods_introduce} ${item.goods_select} -->
+            </div>
+
+        </div>
+        <!--footer-->
+        <div class="xf_footer">
+            <footer>
+                <div class="footer1">
+                    <div class="msg">
+                        <a href="#">品牌动态</a>
+                        <a href="#">生产经营资质</a>
+                        <a href="#">企业合作</a>
+                        <a href="#">发票申请</a>
+                        <a href="#">平台规则</a>
+                        <a href="#">帮助服务</a>
+                        <a href="#">联系我们</a>
+                    </div>
+                    <div class="tel">
+                        <div class="contact-tel">
+                            <img src="../static/img/tel_03.jpg" />
+                            <span>400-999-6665</span>
+                        </div>
+                        <div class="contact-tel">
+                            <a href="http://weibo.com/blisscakesz" rel="nofollow noopener noreferrer">WEIBO</a>
+                        </div>
+
+                        <div class="wx contact-tel">
+                            <p>WECHAT</p>
+                            <div class="qrcode-wrap">
+                                <div class="qrcode-inner">
+                                    <img src="../static/img/wx_qrcode.jpg" alt="">
+                                    <p>扫描幸福商城<br>了解更多资讯</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="msg"><a href="#">京东商城</a></div>
+                </div>
+                <div class="footer2">
+                    <div class="copyright">
+                        <p>
+                            <span>深圳市幸福商城科技股份有限公司</span>
+                            <span>粤ICP备16039394号-6 </span>
+                            <span>京公网安备44030702002399</span>
+                        </p>
+                        <p>公司地址：深圳市盐田区沙头角街道田心社区沙盐路3018号盐田现代产业服务中心(一期)A座13D-3
+                        </p>
+                    </div>
+                    <div class="rd">
+                        <a href="https://xyt.xinchacha.com/pcinfo?sn=461070375988629504&certType=6" rel="nofollow noopener noreferrer" target="_blank">
+                            <img src="../static/img/footer-logo01.png" alt="">
+                        </a>
+                        <a href="https://si.trustutn.org/info?sn=199200907040089273180&certType=1" rel="nofollow noopener noreferrer" target="_blank">
+                            <img src="../static/img/footer-logo02.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="../js/public.js"></script>
+    <script src="../js/ajax.js"></script>
+    <!-- <scrip src="../js/login.js"></scrip> -->
+    <!-- <script src="../js/newzc.js"></script> -->
+    <script src="../js/details.js"></script>
+    <script src="../js/cookie.js"></script>
+
+
+</body>
+
+</html>

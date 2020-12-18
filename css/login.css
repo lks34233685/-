@@ -1,0 +1,75 @@
+@charset "utf-8";
+#main {
+    margin-top: 120px;
+}
+
+.actver {
+    display: block;
+}
+
+.container {
+    margin: 79px auto 60px;
+    width: 510px;
+    font-size: 14px;
+    background: #fff;
+    padding: 50px;
+}
+
+.container .form-title {
+    text-align: center;
+    font-size: 21px;
+    color: #3d2d23;
+    display: block;
+    height: 56px;
+    line-height: 1;
+}
+
+.form-group {
+    display: flex;
+    margin: 18px 0 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerbot {
+    display: flex;
+    justify-content: center;
+}
+
+.containerbot button {
+    font-size: 18px;
+    display: inline-block;
+    border: 1px solid #191919;
+    border-radius: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 49px;
+    padding: 0;
+    text-align: center;
+    background: #fff;
+    transition: all .4s;
+    color: #fff;
+    background: #3d2d23;
+}
+
+.form-group input {
+    border: solid 1px #bdbdbd;
+    height: 50px;
+    line-height: 50px;
+    width: 400px;
+    padding: 0 10px;
+}
+
+.form-group input[type='checkbox'] {
+    line-height: 0;
+    height: 12px;
+    width: 12px;
+}
+
+.useZC input {
+    width: 490px;
+}
+
+.useZC .yzmbox input {
+    width: 400px;
+}

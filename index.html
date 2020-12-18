@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目—幸福西饼首页</title>
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/public.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <link rel="stylesheet" href="./static/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./js/swiper-master/package/swiper-bundle.min.css">
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script src="./js/swiper-master/package/swiper-bundle.min.js"></script>
+
+
+
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+			页面的版心宽度  1251px
+		-->
+    <div id="box">
+        <!--头部-->
+        <div class="xf_header">
+            <div class="header-con">
+                <a href="index.html">
+                    <img src="./static/img/logo_top.png" />
+                </a>
+                <div class="city">
+                    <span><i class="iconfont icon-ziyuan83"></i></span>
+                    <span>广州市</span>
+                    <a href="#" type="button">切换城市</a>
+                </div>
+                <div class="nav">
+                    <a href="./html/list.html">全部</a>
+                    <a href="./html/list.html" class="n cake">蛋糕</a>
+                    <a href="./html/list.html" class="n afternoontea">下午茶</a>
+                    <a href="./html/list.html" class="n freehand">手信</a>
+                    <a href="./html/list.html" class="groupbuys">团购预约</a>
+                    <a href="./html/list.html">关于我们</a>
+                    <a href="./html/list.html">开店咨询</a>
+                </div>
+
+                <div class="link">
+                    <a class="search" href="javascript:void(0)">
+                        <i class="iconfont icon-ziyuan76"></i>
+                    </a>
+                    <a href="./html/car.html" class="car">
+                        <i class="iconfont icon-01"></i>
+                    </a>
+                    <a href="./html/login.html" id="login">
+                        <i class="iconfont icon-daohanglan-05"></i>
+                    </a>
+
+                </div>
+
+            </div>
+            <!-- 隐藏菜单 -->
+            <div id="headerSecNav" class="sec-nav" style="display: none;">
+                <ol class="cake" data-classname="cake" style="display: none;">
+                    <li data-id="1" data-track="首页-二级导航-全部蛋糕">
+                        <a href="./html/list.html">
+                            <div class="icon-wrap"><img src="./static/img/cake-all.jpg" class="icon"></div>
+                            <div class="name">全部蛋糕</div>
+                        </a>
+                    </li>
+                    <li data-id="4" data-track="首页-二级导航-鲜果蛋糕">
+                        <a href="./html/list.html">
+                            <div class="icon-wrap"><img src="./static/img/cake-fruit.png" class="icon"></div>
+                            <div class="name">鲜果蛋糕</div>
+                        </a>
+                    </li>
+                    <li data-id="5" data-track="首页-二级导航-芝士慕斯蛋糕">
+                        <a href="./html/list.html">
+                            <div class="icon-wrap"><img src="./static/img/cake-cheese.png" class="icon"></div>
+                            <div class="name">芝士慕斯蛋糕</div>
+                        </a>
+                    </li>
+                    <li data-id="6" data-track="首页-二级导航-混合型蛋糕">
+                        <a href="./html/list.html">
+                            <div class="icon-wrap"><img src="./static/img/cake-mix.png" class="icon"></div>
+                            <div class="name">混合型蛋糕</div>
+                        </a>
+                    </li>
+                    <li data-id="8" data-track="首页-二级导航-多层蛋糕">
+                        <a href="./html/list.html">
+                            <div class="icon-wrap"><img src="./static/img/cake-lasagna.png" class="icon"></div>
+                            <div class="name">多层蛋糕</div>
+                        </a>
+                    </li>
+                    <li data-id="9" data-track="首页-二级导航-栗子巧克力蛋糕">
+                        <a href="./html/list.html">
+                            <div class="icon-wrap"><img src="./static/img/cake-chestnuts.png" class="icon"></div>
+                            <div class="name">栗子巧克力蛋糕</div>
+                        </a>
+                    </li>
+                    <li data-id="10" data-track="首页-二级导航-节日蛋糕">
+                        <a href="./html/list.html">
+                            <div class="icon-wrap"><img src="./static/img/cake-festival.png" class="icon"></div>
+                            <div class="name">节日蛋糕</div>
+                        </a>
+                    </li>
+                </ol>
+                <ol class="afternoontea" data-classname="afternoontea" style="display: none;">
+                    <li data-id="11" data-track="首页-二级导航-下午茶系列">
+                        <a href="./html/list.html">
+                            <div class="icon-wrap"><img src="./static/img/afternoon-tea.png" class="icon"></div>
+                            <div class="name">下午茶系列</div>
+                        </a>
+                    </li>
+                </ol>
+                <ol class="freehand" data-classname="freehand" style="display: none;">
+                    <li data-id="12" data-track="首页-二级导航-全国包邮">
+                        <a href="./html/list.html">
+                            <div class="icon-wrap"><img src="./static/img/xfl.png" class="icon"></div>
+                            <div class="name">全国包邮</div>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+            <!-- search框 -->
+            <div class="search-bar" style="display: none;">
+                <input class="search-input" type="text" name="">
+                <!-- <a id="start-search" href="javascript:;" data-track="首页-搜索"></a> -->
+                <i class="iconfont icon-ziyuan76"></i>
+            </div>
+        </div>
+        <!--banner-->
+        <div class="banner">
+            <div class="swiper-container banner-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide pic1">
+                        <a href="./index.htmll">
+                            <img src="./static/img/banner01.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="swiper-slide pic2">
+                        <a href="./index.html">
+                            <img src="./static/img/banner02.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="swiper-slide pic3">
+                        <a href="./index.html">
+                            <img src="./static/img/banner03.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            // swiper插件 轮播图相关的插件
+            var mySwiper = new Swiper('.swiper-container', {
+                direction: 'horizontal', // 垂直切换选项
+                loop: true, // 循环模式选项
+                initialSlide: 2,
+                autoplay: {
+                    delay: 1500,
+                    stopOnLastSlide: false,
+                    disableOnInteraction: true,
+                },
+
+                // 如果需要分页器
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                // 如果需要前进后退按钮
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            });
+            // 鼠标覆盖停止自动切换
+            mySwiper.el.onmouseover = function() {
+                mySwiper.autoplay.stop();
+            };
+
+            //鼠标离开开始自动切换
+            mySwiper.el.onmouseout = function() {
+                mySwiper.autoplay.start();
+            };
+        </script>
+        <!-- main -->
+        <div class="cake_type">
+            <div>
+                <a>
+                    <img src="./static/img/cake_03.jpg" />
+                </a>
+                <a>
+                    <span class="en">AFTERNOON TEA </span>
+                    <span class="local">下午茶</span>
+                </a>
+                <p class="about">“一杯咖啡，一份甜点，一抹偷不走的时光”</p>
+            </div>
+            <div>
+                <a>
+                    <img src="./static/img/cake_05.jpg" />
+                </a>
+                <a>
+                    <span class="en">CAKE  </span>
+                    <span class="local">蛋糕</span>
+                </a>
+                <p class="about">“只有国王才有资格拥有的，享受众人给予的祝福”</p>
+            </div>
+            <div>
+                <a>
+                    <img src="./static/img/cake_07.jpg" />
+                </a>
+                <a>
+                    <span class="en">SOUVENIR </span>
+                    <span class="local">手信</span>
+                </a>
+                <p class="about">“不在于贵，一情意，一真诚”</p>
+            </div>
+        </div>
+        <!--footer-->
+        <div class="xf_footer">
+            <footer>
+                <div class="footer1">
+                    <div class="msg">
+                        <a href="#">品牌动态</a>
+                        <a href="#">生产经营资质</a>
+                        <a href="#">企业合作</a>
+                        <a href="#">发票申请</a>
+                        <a href="#">平台规则</a>
+                        <a href="#">帮助服务</a>
+                        <a href="#">联系我们</a>
+                    </div>
+                    <div class="tel">
+                        <div class="contact-tel">
+                            <img src="./static/img/tel_03.jpg" />
+                            <span>400-999-6665</span>
+                        </div>
+                        <div class="contact-tel">
+                            <a href="http://weibo.com/blisscakesz" rel="nofollow noopener noreferrer">WEIBO</a>
+                        </div>
+
+                        <div class="wx contact-tel">
+                            <p>WECHAT</p>
+                            <div class="qrcode-wrap">
+                                <div class="qrcode-inner">
+                                    <img src="./static/img/wx_qrcode.jpg" alt="">
+                                    <p>扫描幸福商城<br>了解更多资讯</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="msg"><a href="#">京东商城</a></div>
+                </div>
+                <div class="footer2">
+                    <div class="copyright">
+                        <p>
+                            <span>深圳市幸福商城科技股份有限公司</span>
+                            <span>粤ICP备16039394号-6 </span>
+                            <span>京公网安备44030702002399</span>
+                        </p>
+                        <p>公司地址：深圳市盐田区沙头角街道田心社区沙盐路3018号盐田现代产业服务中心(一期)A座13D-3
+                        </p>
+                    </div>
+                    <div class="rd">
+                        <a href="https://xyt.xinchacha.com/pcinfo?sn=461070375988629504&certType=6" rel="nofollow noopener noreferrer" target="_blank">
+                            <img src="./static/img/footer-logo01.png" alt="">
+                        </a>
+                        <a href="https://si.trustutn.org/info?sn=199200907040089273180&certType=1" rel="nofollow noopener noreferrer" target="_blank">
+                            <img src="./static/img/footer-logo02.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="./js/public.js"></script>
+    <!-- <script src="./js/newzc.js"></script> -->
+    <!-- <script src="./js/login.js"></script> -->
+</body>
+
+</html>
